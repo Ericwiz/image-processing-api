@@ -1,0 +1,54 @@
+{
+  "name": "image-processing-api",
+  "version": "1.0.0",
+  "description": "An API to automatically resize image and serve it to the frontend",
+  "main": "server.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint:check": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "start": "nodemon ./src/server.ts",
+    "fix": "npm run format:write && npm run lint:fix",
+    "check": "npm run format:check && npm run lint:check"
+  },
+  "keywords": [
+    "API",
+    "Image",
+    "Javascript",
+    "Typescript",
+    "Nodejs",
+    "Express"
+  ],
+  "author": "Agu Obumneme (Ericwiz)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jasmine": "^4.5.0",
+    "jasmine-node": "^3.0.0",
+    "prettier": "^2.8.1",
+    "sharp": "^0.31.2",
+    "supertest": "^6.3.3",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/jasmine": "^4.3.1",
+    "@types/node": "^18.11.11",
+    "@types/sharp": "^0.31.0",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jasmine-ts": "^0.4.0",
+    "ts-node": "^10.9.1"
+  }
+}
