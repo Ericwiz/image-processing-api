@@ -1,6 +1,6 @@
 import express from 'express';
-import resize from './resize';
-import metaData from './metaData';
+import resize from './resizeRoute';
+import metaData from './metaDataRoute';
 const route = express.Router();
 
 // resize middleware

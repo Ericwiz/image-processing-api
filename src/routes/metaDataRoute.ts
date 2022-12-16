@@ -10,8 +10,7 @@ metaData.get('/', async (req, res) => {
 	const name = String(req.query.name);
 	// Use the sharp module to get image meta data
 	try {
-		const getMetaData = await sharp(`./images/${name}`)
-			.metadata();
+		const getMetaData = await sharp(`./images/${name}`).metadata();
 		res.json({
 			imageInfo: {
 				format: getMetaData.format,
@@ -19,15 +18,15 @@ metaData.get('/', async (req, res) => {
 				height: getMetaData.height,
 				depth: getMetaData.depth,
 				hasProfile: getMetaData.hasProfile,
-				hasAlpha: getMetaData.hasAlpha
-			}
+				hasAlpha: getMetaData.hasAlpha,
+			},
 		});
 	} catch (error) {
 		res.json({
 			name: 'Image-processor-api',
 			error: error,
 			solution: 'Provide an image',
-			example: '/image/resize?name=fjord.jpg'
+			example: '/image/resize?name=fjord.jpg',
 		});
 	}
 });
