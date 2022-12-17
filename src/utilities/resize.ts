@@ -1,17 +1,15 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import sharp from 'sharp';
 import nodeCache from 'node-cache';
-import  express  from 'express';
+import express from 'express';
 const cache = new nodeCache();
 import path from 'path';
 
-
-const resizeImage = (async (req:express.Request, res:express.Response) => {
-    
+const resizeImage = async (req: express.Request, res: express.Response) => {
 	// Get the width, height and name from the query string
-	const name:string =  String(req.query.name);
-	const width:number = Number(req.query.width);
-	const height:number = Number(req.query.height);
+	const name: string = String(req.query.name);
+	const width: number = Number(req.query.width);
+	const height: number = Number(req.query.height);
 
 	try {
 		// use sharp to resize the image
@@ -34,7 +32,7 @@ const resizeImage = (async (req:express.Request, res:express.Response) => {
 			// add the image to the cache
 			cache.set(resizedImage, image);
 			// Send the image to the client/Frontend if resized successfully
-			res
+			return res
 				.contentType('image/jpg')
 				.status(200)
 				.sendFile(path.resolve(returnedImage));
@@ -59,8 +57,6 @@ const resizeImage = (async (req:express.Request, res:express.Response) => {
 			});
 		}
 	}
-});
+};
 
 export default resizeImage;
-
-

@@ -2,7 +2,6 @@
 import app from '../../server';
 import supertest from 'supertest';
 
-
 const request = supertest(app);
 
 describe('Should check if all functionalities are working', () => {
