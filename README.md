@@ -4,15 +4,11 @@ It provides a set of APIs for resizing and getting the Image metaData.
 
 ## features
 1. Resize image
-2. Get image meta data.
 
 ## Dependencies
 1.Express
-2.TypeScript
 3. Sharp. 
-4. jasmine. 
-5. eslint.
-6. prettier. e.t.c
+
 
 ## Installation 
 1. clone the git repository.
