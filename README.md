@@ -1,6 +1,6 @@
 # image-processing-api
 This is an Image processing API built with Nodejs, Express, TypeScript/Javascript and the sharp node module. 
-It provides a set of APIs for resizing and getting the Image metaData.
+It provides a set of APIs for resizing Image.
 
 ## features
 1. Resize image
